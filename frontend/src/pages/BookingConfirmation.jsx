@@ -33,7 +33,7 @@ function BookingConfirmation() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/buses")
+    fetch("https://bmb-bus.onrender.com/api/buses")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Unable to fetch buses");
@@ -144,7 +144,7 @@ function BookingConfirmation() {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/bookings",
+        "https://bmb-bus.onrender.com/api/bookings",
         {
           method: "POST",
 

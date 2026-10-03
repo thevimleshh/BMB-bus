@@ -14,7 +14,7 @@ function BusList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/buses")
+    fetch("https://bmb-bus.onrender.com/api/buses")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch buses");

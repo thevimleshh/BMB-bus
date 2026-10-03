@@ -29,7 +29,7 @@ function Signup() {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/auth/signup",
+        "https://bmb-bus.onrender.com/api/auth/signup",
         {
           method: "POST",
           headers: {

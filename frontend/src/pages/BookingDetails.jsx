@@ -28,7 +28,7 @@ function BookingDetails() {
     }
 
     Promise.all([
-      fetch(`http://localhost:8080/api/bookings/${bookingId}`, {
+      fetch(`https://bmb-bus.onrender.com/api/bookings/${bookingId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -40,7 +40,7 @@ function BookingDetails() {
         return response.json();
       }),
 
-      fetch("http://localhost:8080/api/buses").then((response) => {
+      fetch("https://bmb-bus.onrender.com/api/buses").then((response) => {
         if (!response.ok) {
           throw new Error("Unable to fetch bus details.");
         }

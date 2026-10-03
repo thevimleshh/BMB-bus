@@ -20,7 +20,7 @@ function SeatSelection() {
       try {
         // Get bus details
         const busResponse = await fetch(
-          "http://localhost:8080/api/buses"
+          "https://bmb-bus.onrender.com/api/buses"
         );
 
         if (!busResponse.ok) {
@@ -38,7 +38,7 @@ function SeatSelection() {
         // Get already booked seats
         if (selectedBus && journeyDate) {
           const seatResponse = await fetch(
-            `http://localhost:8080/api/bookings/bus/${busId}/date/${journeyDate}/seats`
+            `https://bmb-bus.onrender.com/api/bookings/bus/${busId}/date/${journeyDate}/seats`
           );
 
           if (seatResponse.ok) {

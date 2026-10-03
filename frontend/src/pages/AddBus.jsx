@@ -31,7 +31,7 @@ function AddBus() {
     try {
       // Step 1: Add bus
       const busResponse = await fetch(
-        "http://localhost:8080/api/buses",
+        "https://bmb-bus.onrender.com/api/buses",
         {
           method: "POST",
           headers: {
@@ -60,7 +60,7 @@ function AddBus() {
 
       // Step 2: Add bus schedule
       const scheduleResponse = await fetch(
-        "http://localhost:8080/api/bus-schedules",
+        "https://bmb-bus.onrender.com/api/bus-schedules",
         {
           method: "POST",
           headers: {

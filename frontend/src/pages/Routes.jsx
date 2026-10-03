@@ -23,7 +23,7 @@ function Routes() {
 
   useEffect(() => {
 
-    fetch("http://localhost:8080/api/buses")
+    fetch("https://bmb-bus.onrender.com/api/buses")
 
       .then((response) => {
 

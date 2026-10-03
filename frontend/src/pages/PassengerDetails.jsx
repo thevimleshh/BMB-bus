@@ -46,7 +46,7 @@ function PassengerDetails() {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/buses"
+        "https://bmb-bus.onrender.com/api/buses"
       );
 
       if (!response.ok) {
