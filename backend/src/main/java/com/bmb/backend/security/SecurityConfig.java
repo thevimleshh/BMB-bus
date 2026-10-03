@@ -68,6 +68,7 @@ public class SecurityConfig {
 
                         // Public bus APIs
                         .requestMatchers(
+                                "/",
                                 "/api/buses",
                                 "/api/bus-schedules"
                         ).permitAll()
