@@ -1,0 +1,465 @@
+/* ================================
+   ADD BUS PAGE
+================================ */
+
+.add-bus-page {
+  min-height: calc(100vh - 72px);
+  background: #f6f7f9;
+  padding: 50px 24px 70px;
+  color: #17191c;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.add-bus-header {
+  max-width: 1050px;
+  margin: 0 auto 38px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.add-bus-header-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #17191c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.add-bus-header span {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.add-bus-header h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.add-bus-header p {
+  margin: 7px 0 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.add-bus-container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* ================================
+   FORM CARD
+================================ */
+
+.add-bus-card {
+  background: #ffffff;
+  border: 1px solid #e7e8eb;
+  border-radius: 22px;
+  padding: 38px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* ================================
+   FORM SECTION
+================================ */
+
+.form-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 26px;
+}
+
+.section-number {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f0f1f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #17191c;
+  flex-shrink: 0;
+}
+
+.form-section h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.2px;
+}
+
+.form-section p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #858585;
+}
+
+/* ================================
+   FORM GRID
+================================ */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 24px;
+}
+
+/* ================================
+   FORM FIELD
+================================ */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #555;
+  margin-bottom: 9px;
+}
+
+.form-field input {
+  width: 100%;
+  height: 48px;
+  padding: 0 15px;
+  border: 1px solid #dfe1e5;
+  border-radius: 10px;
+  background: #fff;
+  color: #17191c;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-field input::placeholder {
+  color: #b0b2b5;
+}
+
+.form-field input:hover {
+  border-color: #c8cacf;
+}
+
+.form-field input:focus {
+  border-color: #17191c;
+  box-shadow: 0 0 0 3px rgba(23, 25, 28, 0.06);
+}
+
+/* ================================
+   NUMBER INPUT
+================================ */
+
+.form-field input[type="number"]::-webkit-inner-spin-button,
+.form-field input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.5;
+}
+
+/* ================================
+   DATE & TIME
+================================ */
+
+.form-field input[type="date"],
+.form-field input[type="time"] {
+  cursor: pointer;
+}
+
+/* ================================
+   RUPEE INPUT
+================================ */
+
+.input-with-symbol {
+  position: relative;
+}
+
+.input-with-symbol > span {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 700;
+  color: #555;
+  z-index: 1;
+}
+
+.input-with-symbol input {
+  padding-left: 36px;
+}
+
+/* ================================
+   DIVIDER
+================================ */
+
+.form-divider {
+  height: 1px;
+  background: #ececef;
+  margin: 38px 0;
+}
+
+/* ================================
+   SCHEDULE NOTE
+================================ */
+
+.schedule-note {
+  margin-top: 32px;
+  padding: 16px 18px;
+  border: 1px solid #e4e5e8;
+  border-radius: 12px;
+  background: #fafafa;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.note-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #17191c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.schedule-note strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.schedule-note p {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* ================================
+   FORM ACTIONS
+================================ */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* Clear button */
+
+.clear-btn {
+  height: 46px;
+  padding: 0 22px;
+  border: 1px solid #d9dade;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #555;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover:not(:disabled) {
+  border-color: #b9bbc0;
+  background: #f7f7f8;
+}
+
+/* Add button */
+
+.add-bus-btn {
+  height: 46px;
+  min-width: 150px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  background: #17191c;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.add-bus-btn span {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.add-bus-btn:hover:not(:disabled) {
+  background: #2c2f33;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.add-bus-btn:hover:not(:disabled) span {
+  transform: translateX(3px);
+}
+
+.add-bus-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* ================================
+   DISABLED
+================================ */
+
+.clear-btn:disabled,
+.add-bus-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   BUTTON SPINNER
+================================ */
+
+.button-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: addBusSpin 0.7s linear infinite;
+}
+
+@keyframes addBusSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 768px) {
+
+  .add-bus-page {
+    padding: 35px 18px 50px;
+  }
+
+  .add-bus-header {
+    margin-bottom: 28px;
+  }
+
+  .add-bus-header h1 {
+    font-size: 28px;
+  }
+
+  .add-bus-card {
+    padding: 28px 22px;
+    border-radius: 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .form-divider {
+    margin: 30px 0;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 520px) {
+
+  .add-bus-page {
+    padding: 25px 12px 40px;
+  }
+
+  .add-bus-header {
+    gap: 12px;
+  }
+
+  .add-bus-header-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    font-size: 22px;
+  }
+
+  .add-bus-header h1 {
+    font-size: 24px;
+  }
+
+  .add-bus-header p {
+    font-size: 12px;
+  }
+
+  .add-bus-card {
+    padding: 23px 16px;
+    border-radius: 16px;
+  }
+
+  .form-section {
+    gap: 11px;
+  }
+
+  .section-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .form-section h2 {
+    font-size: 17px;
+  }
+
+  .form-section p {
+    font-size: 11px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .clear-btn,
+  .add-bus-btn {
+    width: 100%;
+  }
+
+  .schedule-note {
+    padding: 14px;
+  }
+}

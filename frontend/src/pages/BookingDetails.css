@@ -1,0 +1,369 @@
+.booking-details-page {
+  min-height: 100vh;
+  background: #f7f8fc;
+  padding: 40px 7%;
+  color: #171717;
+}
+
+.booking-details-header {
+  max-width: 1100px;
+  margin: 0 auto 30px;
+}
+
+.details-back-btn {
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.booking-details-header > span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+.booking-details-header h1 {
+  margin: 8px 0;
+  font-size: 38px;
+}
+
+.booking-details-header p {
+  color: #777;
+  margin: 0;
+}
+
+
+/* Main Container */
+
+.booking-details-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+/* Status */
+
+.details-status-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.details-status-card span,
+.journey-info-grid span,
+.passenger-info-grid span,
+.payment-summary-card span {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 7px;
+}
+
+.details-status-card strong {
+  font-size: 15px;
+}
+
+.confirmed-status,
+.payment-status {
+  color: #159447;
+}
+
+
+/* Details Card */
+
+.details-card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.details-card-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.details-card-title > span {
+  font-size: 30px;
+}
+
+.details-card-title h2 {
+  margin: 0 0 4px;
+  font-size: 21px;
+}
+
+.details-card-title p {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+}
+
+
+/* Route */
+
+.details-route {
+  display: grid;
+  grid-template-columns: 1fr 180px 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.details-city span {
+  font-size: 11px;
+  color: #888;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.details-city h2 {
+  margin: 6px 0;
+  font-size: 28px;
+}
+
+.details-city strong {
+  font-size: 17px;
+}
+
+.details-route-line {
+  text-align: center;
+  color: #999;
+}
+
+.details-route-line span {
+  font-size: 24px;
+}
+
+.details-route-line div {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.details-divider {
+  height: 1px;
+  background: #eee;
+  margin: 28px 0;
+}
+
+
+/* Journey Info */
+
+.journey-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.journey-info-grid strong,
+.passenger-info-grid strong {
+  font-size: 15px;
+}
+
+
+/* Passenger */
+
+.passenger-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.passenger-info-grid div:last-child {
+  grid-column: 1 / -1;
+}
+
+
+/* Payment */
+
+.payment-summary-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.payment-summary-card h2 {
+  margin: 4px 0 0;
+  font-size: 30px;
+}
+
+.payment-success {
+  color: #159447;
+  font-weight: 700;
+}
+
+
+/* Buttons */
+
+.details-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.back-bookings-btn,
+.print-ticket-btn {
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.back-bookings-btn {
+  background: white;
+  border: 1px solid #ddd;
+}
+
+.print-ticket-btn {
+  background: #111;
+  color: white;
+  border: none;
+}
+
+
+/* Loading */
+
+.booking-details-loading {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-details-loading p {
+  color: #888;
+}
+
+.details-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ddd;
+  border-top-color: #111;
+  border-radius: 50%;
+  animation: detailsSpin 0.8s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes detailsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Error */
+
+.booking-details-error {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 45px;
+}
+
+.booking-details-error p {
+  color: #777;
+}
+
+.booking-details-error button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 9px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* Bus Not Found */
+
+.bus-not-found {
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  color: #777;
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+  .booking-details-page {
+    padding: 30px 5%;
+  }
+
+  .booking-details-header h1 {
+    font-size: 30px;
+  }
+
+  .details-status-card {
+    grid-template-columns: 1fr;
+  }
+
+  .details-route {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .journey-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .passenger-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .passenger-info-grid div:last-child {
+    grid-column: auto;
+  }
+
+  .payment-summary-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .details-actions {
+    gap: 12px;
+  }
+
+}
+
+@media print {
+
+  .details-back-btn,
+  .details-actions {
+    display: none;
+  }
+
+  .booking-details-page {
+    background: white;
+    padding: 20px;
+  }
+
+}

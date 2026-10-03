@@ -1,0 +1,275 @@
+.bus-list-page {
+  min-height: 100vh;
+  background: #f7f9fc;
+  padding: 50px 8%;
+}
+
+/* Header */
+
+.bus-list-header {
+  margin-bottom: 40px;
+}
+
+.bus-list-header > span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #2563eb;
+}
+
+.bus-list-header h1 {
+  font-size: 42px;
+  margin: 12px 0 8px;
+  color: #111827;
+}
+
+.bus-list-header p {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* Back Button */
+
+.back-btn {
+  border: none;
+  background: transparent;
+  color: #2563eb;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* Bus Container */
+
+.bus-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Bus Card */
+
+.bus-card {
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Info */
+
+.bus-main-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.bus-name-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bus-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.bus-name-section h2 {
+  margin: 0 0 6px;
+  font-size: 21px;
+  color: #111827;
+}
+
+.bus-name-section p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Time */
+
+.bus-route-time {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.time-box strong {
+  font-size: 19px;
+  color: #111827;
+}
+
+.time-box span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.time-line {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* Divider */
+
+.bus-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 25px 0;
+}
+
+/* Details */
+
+.bus-details {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.bus-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bus-detail span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.bus-detail strong {
+  font-size: 18px;
+  color: #111827;
+}
+
+.bus-price {
+  color: #2563eb !important;
+}
+
+/* Select Button */
+
+.select-bus-btn {
+  margin-left: auto;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.select-bus-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Loading */
+
+.bus-loading {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bus-loading h2 {
+  color: #111827;
+}
+
+.bus-loading p {
+  color: #6b7280;
+}
+
+/* No Buses */
+
+.no-buses {
+  background: white;
+  border-radius: 18px;
+  padding: 60px 30px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.no-buses-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.no-buses h2 {
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.no-buses p {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.no-buses button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 13px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .bus-list-page {
+    padding: 35px 5%;
+  }
+
+  .bus-list-header h1 {
+    font-size: 32px;
+  }
+
+  .bus-main-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bus-route-time {
+    width: 100%;
+  }
+
+  .bus-details {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .select-bus-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+}

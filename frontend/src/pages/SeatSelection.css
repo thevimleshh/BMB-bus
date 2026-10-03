@@ -1,0 +1,848 @@
+/* =========================================
+   SEAT SELECTION PAGE
+========================================= */
+
+.seat-page {
+  min-height: calc(100vh - 80px);
+  background: #f7f8fa;
+  padding: 60px 7% 80px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.seat-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.seat-header span {
+  color: #e63946;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.seat-header h1 {
+  margin: 10px 0;
+  color: #172033;
+  font-size: 38px;
+}
+
+.seat-header p {
+  margin: 0;
+  color: #687386;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   JOURNEY CARD
+========================================= */
+
+.journey-card {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+
+  background: white;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 15px;
+
+  padding: 22px 25px;
+
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1.3fr 0.8fr;
+
+  gap: 20px;
+
+  box-shadow: 0 8px 30px rgba(23, 32, 51, 0.06);
+}
+
+.journey-item {
+  padding-right: 20px;
+
+  border-right: 1px solid #edf0f4;
+}
+
+.journey-item:last-child {
+  border-right: none;
+}
+
+.journey-item span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #8a94a5;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.journey-item strong {
+  display: block;
+
+  color: #172033;
+
+  font-size: 15px;
+}
+
+.journey-item small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #8a94a5;
+
+  font-size: 11px;
+}
+
+.journey-item .fare {
+  color: #e63946;
+
+  font-size: 18px;
+}
+
+.date-item strong {
+  color: #e63946;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.seat-layout-wrapper {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 350px;
+
+  gap: 25px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   SEAT LAYOUT CARD
+========================================= */
+
+.seat-layout-card {
+  background: white;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 16px;
+
+  padding: 30px;
+
+  box-shadow: 0 10px 35px rgba(23, 32, 51, 0.07);
+}
+
+
+/* =========================================
+   SEAT HEADER
+========================================= */
+
+.seat-layout-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.seat-layout-header h2 {
+  margin: 0 0 5px;
+
+  color: #172033;
+
+  font-size: 21px;
+}
+
+.seat-layout-header p {
+  margin: 0;
+
+  color: #7b8595;
+
+  font-size: 12px;
+}
+
+.seat-count {
+  padding: 8px 13px;
+
+  background: #fff0f1;
+
+  color: #e63946;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   LEGEND
+========================================= */
+
+.seat-legend {
+  display: flex;
+
+  gap: 25px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.legend-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #687386;
+
+  font-size: 11px;
+}
+
+.legend-seat {
+  width: 17px;
+
+  height: 17px;
+
+  border-radius: 5px;
+
+  border: 1px solid #d8dde5;
+
+  display: inline-block;
+}
+
+.legend-seat.available {
+  background: white;
+}
+
+.legend-seat.selected {
+  background: #e63946;
+
+  border-color: #e63946;
+}
+
+
+/* =========================================
+   BUS INTERIOR
+========================================= */
+
+.bus-interior {
+  max-width: 500px;
+
+  margin: 30px auto 10px;
+
+  padding: 20px 25px 30px;
+
+  background: #fafbfc;
+
+  border: 1px solid #e7ebf0;
+
+  border-radius: 25px;
+}
+
+
+/* =========================================
+   DRIVER
+========================================= */
+
+.driver-area {
+  width: 75px;
+
+  margin-left: auto;
+
+  margin-bottom: 25px;
+
+  padding: 8px;
+
+  background: white;
+
+  border: 1px solid #dfe4ea;
+
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.steering {
+  font-size: 20px;
+
+  color: #687386;
+
+  line-height: 20px;
+}
+
+.driver-area span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8a94a5;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SEAT GRID
+========================================= */
+
+.seat-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 13px;
+
+  max-width: 350px;
+
+  margin: auto;
+}
+
+
+/* =========================================
+   SEAT
+========================================= */
+
+.seat {
+  position: relative;
+
+  height: 48px;
+
+  border: 1px solid #dce1e8;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #4e596a;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  transition: 0.2s;
+
+  box-shadow: 0 2px 5px rgba(23, 32, 51, 0.04);
+}
+
+.seat:hover {
+  border-color: #e63946;
+
+  color: #e63946;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(23, 32, 51, 0.08);
+}
+
+.seat.selected {
+  background: #e63946;
+
+  border-color: #e63946;
+
+  color: white;
+
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.22);
+}
+
+.seat-number {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================
+   BOOKING SUMMARY
+========================================= */
+
+.booking-summary {
+  background: white;
+
+  border: 1px solid #edf0f4;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  box-shadow: 0 10px 35px rgba(23, 32, 51, 0.07);
+
+  position: sticky;
+
+  top: 100px;
+}
+
+
+/* =========================================
+   SUMMARY HEADER
+========================================= */
+
+.summary-header {
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.summary-header span {
+  color: #e63946;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.summary-header h2 {
+  margin: 6px 0 0;
+
+  color: #172033;
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   ROUTE
+========================================= */
+
+.summary-route {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  padding: 20px 0;
+
+  color: #172033;
+}
+
+.summary-route strong {
+  font-size: 15px;
+
+  text-transform: capitalize;
+}
+
+.summary-route span {
+  color: #e63946;
+
+  font-size: 18px;
+}
+
+
+/* =========================================
+   DATE
+========================================= */
+
+.summary-date {
+  padding: 13px;
+
+  margin-bottom: 15px;
+
+  background: #fff5f5;
+
+  border-radius: 9px;
+}
+
+.summary-date span {
+  display: block;
+
+  color: #8a94a5;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 5px;
+}
+
+.summary-date strong {
+  color: #e63946;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   SUMMARY ROW
+========================================= */
+
+.summary-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 11px 0;
+
+  color: #687386;
+
+  font-size: 12px;
+}
+
+.summary-row strong {
+  color: #172033;
+
+  text-align: right;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.summary-divider {
+  height: 1px;
+
+  background: #edf0f4;
+
+  margin: 8px 0;
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.summary-total {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 15px 0 18px;
+}
+
+.summary-total span {
+  color: #172033;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.summary-total strong {
+  color: #e63946;
+
+  font-size: 22px;
+}
+
+
+/* =========================================
+   CONTINUE BUTTON
+========================================= */
+
+.continue-btn {
+  width: 100%;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #e63946;
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.continue-btn span {
+  font-size: 16px;
+}
+
+.continue-btn:hover:not(:disabled) {
+  background: #c92f3b;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.2);
+}
+
+.continue-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.continue-btn:disabled {
+  background: #dfe3e8;
+
+  color: #9ca4af;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.seat-loading {
+  min-height: 60vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.loading-circle {
+  width: 35px;
+
+  height: 35px;
+
+  border: 3px solid #edf0f4;
+
+  border-top-color: #e63946;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+
+  margin-bottom: 18px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.seat-loading h2 {
+  color: #172033;
+
+  font-size: 20px;
+}
+
+.seat-loading p {
+  color: #687386;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.seat-error {
+  min-height: 60vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 45px;
+
+  margin-bottom: 10px;
+}
+
+.seat-error h2 {
+  color: #172033;
+}
+
+.seat-error p {
+  color: #687386;
+
+  font-size: 13px;
+}
+
+.seat-error button {
+  margin-top: 15px;
+
+  border: none;
+
+  background: #e63946;
+
+  color: white;
+
+  padding: 11px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .seat-layout-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-summary {
+    position: static;
+  }
+
+  .journey-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .journey-item:nth-child(2) {
+    border-right: none;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .seat-page {
+    padding: 40px 18px 60px;
+  }
+
+  .seat-header h1 {
+    font-size: 29px;
+  }
+
+  .seat-header p {
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+
+  /* Journey */
+
+  .journey-card {
+    grid-template-columns: 1fr;
+
+    padding: 18px;
+
+    gap: 0;
+  }
+
+  .journey-item {
+    border-right: none;
+
+    border-bottom: 1px solid #edf0f4;
+
+    padding: 13px 5px;
+  }
+
+  .journey-item:last-child {
+    border-bottom: none;
+  }
+
+
+  /* Seat card */
+
+  .seat-layout-card {
+    padding: 20px 15px;
+  }
+
+  .seat-layout-header {
+    align-items: flex-start;
+  }
+
+  .seat-layout-header h2 {
+    font-size: 18px;
+  }
+
+  .seat-count {
+    font-size: 9px;
+  }
+
+
+  /* Bus */
+
+  .bus-interior {
+    padding: 18px 12px 25px;
+  }
+
+  .seat-grid {
+    gap: 9px;
+
+    max-width: 300px;
+  }
+
+  .seat {
+    height: 44px;
+
+    font-size: 11px;
+  }
+
+
+  /* Summary */
+
+  .booking-summary {
+    padding: 20px;
+  }
+
+}

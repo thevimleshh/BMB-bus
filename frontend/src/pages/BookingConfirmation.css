@@ -1,0 +1,599 @@
+/* =========================================
+   BOOKING CONFIRMATION PAGE
+========================================= */
+
+.confirmation-page {
+  min-height: calc(100vh - 80px);
+  background: #f7f8fa;
+  padding: 60px 7% 80px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.confirmation-header,
+.success-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.confirmation-header span,
+.success-header span {
+  color: #e63946;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.confirmation-header h1,
+.success-header h1 {
+  margin: 10px 0;
+  color: #172033;
+  font-size: 38px;
+}
+
+.confirmation-header p,
+.success-header p {
+  margin: 0;
+  color: #687386;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.confirmation-container {
+  max-width: 850px;
+  margin: auto;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.confirmation-card {
+  background: white;
+  border: 1px solid #edf0f4;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 30px rgba(23, 32, 51, 0.06);
+}
+
+.card-title {
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.card-title h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 20px;
+}
+
+
+/* =========================================
+   ROUTE
+========================================= */
+
+.confirmation-route,
+.ticket-route {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  padding: 15px 0 25px;
+}
+
+.confirmation-route > div:not(.confirmation-arrow),
+.ticket-route > div:not(.ticket-arrow) {
+  text-align: center;
+}
+
+.confirmation-route span,
+.ticket-route span {
+  display: block;
+  color: #8a94a5;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.confirmation-route strong,
+.ticket-route strong {
+  display: block;
+  color: #172033;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.confirmation-route small,
+.ticket-route small {
+  display: block;
+  margin-top: 5px;
+  color: #687386;
+  font-size: 12px;
+}
+
+.confirmation-arrow,
+.ticket-arrow {
+  color: #e63946;
+  font-size: 25px;
+}
+
+
+/* =========================================
+   INFO GRID
+========================================= */
+
+.confirmation-info-grid,
+.passenger-info-grid,
+.ticket-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.confirmation-info-grid > div,
+.passenger-info-grid > div,
+.ticket-details > div {
+  padding: 14px;
+  background: #fafbfc;
+  border-radius: 9px;
+}
+
+.confirmation-info-grid span,
+.passenger-info-grid span,
+.ticket-details span {
+  display: block;
+  margin-bottom: 6px;
+  color: #8a94a5;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.confirmation-info-grid strong,
+.passenger-info-grid strong,
+.ticket-details strong {
+  color: #172033;
+  font-size: 13px;
+}
+
+.highlight-info {
+  background: #fff3f4 !important;
+}
+
+.highlight-info strong {
+  color: #e63946 !important;
+}
+
+
+/* =========================================
+   FARE
+========================================= */
+
+.fare-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  align-items: center;
+
+  background: white;
+  border: 1px solid #edf0f4;
+  border-radius: 14px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+
+  box-shadow: 0 8px 30px rgba(23, 32, 51, 0.06);
+}
+
+.fare-card > div {
+  border-right: 1px solid #edf0f4;
+  padding-right: 20px;
+  margin-right: 20px;
+}
+
+.fare-card > div:last-child {
+  border-right: none;
+  margin-right: 0;
+}
+
+.fare-card span {
+  display: block;
+  color: #8a94a5;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.fare-card strong {
+  color: #172033;
+  font-size: 15px;
+}
+
+.fare-card .total-fare {
+  text-align: right;
+}
+
+.fare-card .total-fare strong {
+  color: #e63946;
+  font-size: 23px;
+}
+
+
+/* =========================================
+   CONFIRM BUTTON
+========================================= */
+
+.confirm-booking-btn {
+  width: 100%;
+  height: 52px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #e63946;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.confirm-booking-btn:hover:not(:disabled) {
+  background: #c92f3b;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(230, 57, 70, 0.2);
+}
+
+.confirm-booking-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.booking-error {
+  margin-bottom: 15px;
+  padding: 13px;
+
+  background: #fff0f1;
+  border: 1px solid #ffd4d7;
+  border-radius: 8px;
+
+  color: #c92f3b;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+/* =========================================
+   SUCCESS
+========================================= */
+
+.success-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8f8ef;
+  color: #1c9b57;
+
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.success-header span {
+  color: #1c9b57;
+}
+
+
+/* =========================================
+   TICKET
+========================================= */
+
+.ticket-card {
+  max-width: 850px;
+  margin: 0 auto;
+
+  background: white;
+
+  border: 1px solid #edf0f4;
+  border-radius: 16px;
+
+  padding: 30px;
+
+  box-shadow: 0 12px 40px rgba(23, 32, 51, 0.08);
+}
+
+.ticket-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #dfe4ea;
+}
+
+.ticket-top span {
+  display: block;
+  color: #8a94a5;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ticket-top strong {
+  display: block;
+  margin-top: 5px;
+  color: #172033;
+  font-size: 18px;
+}
+
+.confirmed-badge {
+  padding: 7px 12px;
+
+  background: #e8f8ef;
+  color: #1c9b57;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TICKET DETAILS
+========================================= */
+
+.ticket-divider {
+  height: 1px;
+  margin: 20px 0;
+
+  border-top: 1px dashed #dfe4ea;
+}
+
+.ticket-details {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ticket-price {
+  color: #e63946 !important;
+  font-size: 17px !important;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.confirmation-actions {
+  max-width: 850px;
+  margin: 20px auto 0;
+
+  display: flex;
+  gap: 12px;
+}
+
+.print-ticket-btn,
+.my-bookings-btn {
+  flex: 1;
+
+  height: 48px;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.print-ticket-btn {
+  border: 1px solid #e63946;
+  background: white;
+  color: #e63946;
+}
+
+.print-ticket-btn:hover {
+  background: #fff0f1;
+}
+
+.my-bookings-btn {
+  border: none;
+  background: #e63946;
+  color: white;
+}
+
+.my-bookings-btn:hover {
+  background: #c92f3b;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.confirmation-loading {
+  min-height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-spinner {
+  width: 35px;
+  height: 35px;
+
+  border: 3px solid #edf0f4;
+  border-top-color: #e63946;
+
+  border-radius: 50%;
+
+  animation: confirmationSpin 0.8s linear infinite;
+
+  margin-bottom: 18px;
+}
+
+@keyframes confirmationSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.confirmation-loading h2 {
+  color: #172033;
+  font-size: 20px;
+}
+
+.confirmation-loading p {
+  color: #687386;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   ERROR PAGE
+========================================= */
+
+.confirmation-error {
+  min-height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-error h2 {
+  color: #172033;
+}
+
+.confirmation-error button {
+  border: none;
+  background: #e63946;
+  color: white;
+
+  padding: 11px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .confirmation-page {
+    padding: 40px 18px 60px;
+  }
+
+  .confirmation-header h1,
+  .success-header h1 {
+    font-size: 29px;
+  }
+
+  .confirmation-card,
+  .ticket-card {
+    padding: 20px;
+  }
+
+  .confirmation-route,
+  .ticket-route {
+    gap: 20px;
+  }
+
+  .confirmation-route strong,
+  .ticket-route strong {
+    font-size: 18px;
+  }
+
+  .confirmation-info-grid,
+  .passenger-info-grid,
+  .ticket-details {
+    grid-template-columns: 1fr;
+  }
+
+  .fare-card {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .fare-card > div {
+    border-right: none;
+    border-bottom: 1px solid #edf0f4;
+
+    padding-right: 0;
+    padding-bottom: 12px;
+    margin-right: 0;
+  }
+
+  .fare-card .total-fare {
+    border-bottom: none;
+    text-align: left;
+  }
+
+  .confirmation-actions {
+    flex-direction: column;
+  }
+
+}
+
+
+/* =========================================
+   PRINT TICKET
+========================================= */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  .confirmation-page {
+    padding: 0;
+    background: white;
+  }
+
+  .success-header {
+    margin-bottom: 20px;
+  }
+
+  .confirmation-actions,
+  nav {
+    display: none !important;
+  }
+
+  .ticket-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
