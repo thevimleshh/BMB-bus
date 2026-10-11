@@ -8,7 +8,7 @@ import {
 
 import "./BookingConfirmation.css";
 
-const API_URL = "http://localhost:8080";
+const API_URL = "https://bmb-bus.onrender.com";
 
 function BookingConfirmation() {
   const [searchParams] = useSearchParams();

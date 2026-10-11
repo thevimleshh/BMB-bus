@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import "./PassengerDetails.css";
 
-const API_URL = "http://localhost:8080";
+const API_URL = "https://bmb-bus.onrender.com";
 
 function PassengerDetails() {
   const [searchParams] = useSearchParams();
