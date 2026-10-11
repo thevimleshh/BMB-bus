@@ -35,7 +35,7 @@ import LoyaltyPoints from "./pages/LoyaltyPoints";
 import About from "./pages/About";
 import BookingDetails from "./pages/BookingDetails";
 import Payment from "./pages/Payment";
-
+import PickupDrop from "./pages/PickupDrop";
 // =====================================================
 // MAIN CSS
 // =====================================================
@@ -119,6 +119,7 @@ function App() {
           path="/offers"
           element={<Offers />}
         />
+        <Route path="/pickup-drop" element={<PickupDrop />} />
 
 
         {/* =================================================

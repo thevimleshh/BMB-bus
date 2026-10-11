@@ -1,5 +1,11 @@
+
 import { useState } from "react";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
+
 import "./Payment.css";
 
 function Payment() {
@@ -12,18 +18,37 @@ function Payment() {
   const journeyDate = searchParams.get("date");
   const amount = searchParams.get("amount");
 
-  const passenger = location.state?.passenger;
+  // Passenger and pickup/drop data from previous page
+  const {
+    passenger,
+    pickupStopId,
+    dropStopId,
+    pickupStopName,
+    pickupCity,
+    pickupAddress,
+    dropStopName,
+    dropCity,
+    dropAddress,
+  } = location.state || {};
 
   const [paymentMethod, setPaymentMethod] = useState("upi");
   const [upiId, setUpiId] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvv, setCvv] = useState("");
+  const [bank, setBank] = useState("");
   const [processing, setProcessing] = useState(false);
 
   const handlePayment = () => {
     if (!passenger) {
-      alert("Passenger details not found. Please go back.");
+      alert("Passenger details nahi mile. Please booking dobara shuru karo.");
+      navigate("/routes");
+      return;
+    }
+
+    if (!pickupStopId || !dropStopId) {
+      alert("Pickup/drop details missing hain. Please booking dobara shuru karo.");
+      navigate("/routes");
       return;
     }
 
@@ -39,10 +64,26 @@ function Payment() {
       }
     }
 
+    if (paymentMethod === "netbanking" && !bank) {
+      alert("Please select your bank.");
+      return;
+    }
+
     setProcessing(true);
 
-    // Simulated payment
+    // DEMO ONLY: This simulates payment; it does not charge money.
     setTimeout(() => {
+      const payment = {
+        paymentStatus: "SUCCESS",
+        paymentId: "BMB-DEMO-" + Date.now(),
+        paymentMethod:
+          paymentMethod === "upi"
+            ? "UPI"
+            : paymentMethod === "card"
+            ? "Card"
+            : "Net Banking",
+      };
+
       setProcessing(false);
 
       navigate(
@@ -58,27 +99,26 @@ function Payment() {
         {
           state: {
             passenger,
-            payment: {
-              paymentStatus: "SUCCESS",
-              paymentId: "BMB-PAY-" + Date.now(),
-              paymentMethod:
-                paymentMethod === "upi"
-                  ? "UPI"
-                  : paymentMethod === "card"
-                  ? "Card"
-                  : "Net Banking",
-            },
+            payment,
+
+            // Forward the selected pickup/drop information
+            pickupStopId,
+            dropStopId,
+            pickupStopName,
+            pickupCity,
+            pickupAddress,
+            dropStopName,
+            dropCity,
+            dropAddress,
           },
         }
       );
-    }, 1800);
+    }, 1500);
   };
 
   return (
     <div className="payment-page">
-
       <div className="payment-header">
-
         <button
           className="payment-back-btn"
           onClick={() => navigate(-1)}
@@ -86,47 +126,32 @@ function Payment() {
           ← Back
         </button>
 
-        <span>SECURE PAYMENT</span>
-
+        <span>PAYMENT</span>
         <h1>Complete Your Payment</h1>
-
-        <p>
-          Securely pay for your BMB bus booking.
-        </p>
-
+        <p>Review your amount and choose a payment method.</p>
       </div>
 
       <div className="payment-container">
-
-        {/* Amount */}
-
         <div className="payment-amount-card">
-
           <div>
             <span>TOTAL AMOUNT</span>
             <h2>₹{amount || "0"}</h2>
           </div>
 
           <div className="secure-badge">
-            🔒 Secure Payment
+            🔒 Demo Checkout
           </div>
-
         </div>
 
-
-        {/* Payment Methods */}
-
         <div className="payment-card">
-
           <div className="payment-card-heading">
             <h2>Choose Payment Method</h2>
-            <p>Select your preferred payment option.</p>
+            <p>Select your preferred option.</p>
           </div>
 
-
           <div className="payment-methods">
-
             <button
+              type="button"
               className={
                 paymentMethod === "upi"
                   ? "payment-method active"
@@ -135,15 +160,14 @@ function Payment() {
               onClick={() => setPaymentMethod("upi")}
             >
               <span className="method-icon">📱</span>
-
               <div>
                 <strong>UPI</strong>
                 <small>Google Pay, PhonePe, Paytm</small>
               </div>
             </button>
 
-
             <button
+              type="button"
               className={
                 paymentMethod === "card"
                   ? "payment-method active"
@@ -152,15 +176,14 @@ function Payment() {
               onClick={() => setPaymentMethod("card")}
             >
               <span className="method-icon">💳</span>
-
               <div>
                 <strong>Credit / Debit Card</strong>
-                <small>Visa, Mastercard, RuPay</small>
+                <small>Demo form only</small>
               </div>
             </button>
 
-
             <button
+              type="button"
               className={
                 paymentMethod === "netbanking"
                   ? "payment-method active"
@@ -169,132 +192,102 @@ function Payment() {
               onClick={() => setPaymentMethod("netbanking")}
             >
               <span className="method-icon">🏦</span>
-
               <div>
                 <strong>Net Banking</strong>
-                <small>All major banks</small>
+                <small>Demo form only</small>
               </div>
             </button>
-
           </div>
-
-
-          {/* UPI */}
 
           {paymentMethod === "upi" && (
             <div className="payment-form">
-
-              <label>UPI ID</label>
-
+              <label htmlFor="upiId">UPI ID</label>
               <input
+                id="upiId"
                 type="text"
                 placeholder="example@upi"
                 value={upiId}
-                onChange={(e) => setUpiId(e.target.value)}
+                onChange={(event) => setUpiId(event.target.value)}
               />
-
               <p className="payment-hint">
-                Enter your UPI ID to continue.
+                Demo only. No actual payment will be made.
               </p>
-
             </div>
           )}
 
-
-          {/* Card */}
-
           {paymentMethod === "card" && (
             <div className="payment-form">
-
-              <label>Card Number</label>
-
+              <label htmlFor="cardNumber">Card Number</label>
               <input
+                id="cardNumber"
                 type="text"
                 maxLength="19"
                 placeholder="1234 5678 9012 3456"
                 value={cardNumber}
-                onChange={(e) =>
-                  setCardNumber(e.target.value)
-                }
+                onChange={(event) => setCardNumber(event.target.value)}
               />
 
               <div className="card-row">
-
                 <div>
-                  <label>Expiry</label>
-
+                  <label htmlFor="expiry">Expiry</label>
                   <input
+                    id="expiry"
                     type="text"
                     placeholder="MM/YY"
                     maxLength="5"
                     value={expiry}
-                    onChange={(e) =>
-                      setExpiry(e.target.value)
-                    }
+                    onChange={(event) => setExpiry(event.target.value)}
                   />
                 </div>
 
                 <div>
-                  <label>CVV</label>
-
+                  <label htmlFor="cvv">CVV</label>
                   <input
+                    id="cvv"
                     type="password"
                     placeholder="•••"
                     maxLength="3"
                     value={cvv}
-                    onChange={(e) =>
-                      setCvv(e.target.value)
-                    }
+                    onChange={(event) => setCvv(event.target.value)}
                   />
                 </div>
-
               </div>
 
+              <p className="payment-hint">
+                Demo only. Do not enter real card details.
+              </p>
             </div>
           )}
-
-
-          {/* Net Banking */}
 
           {paymentMethod === "netbanking" && (
             <div className="payment-form">
-
-              <label>Select Bank</label>
-
-              <select>
-                <option>Select your bank</option>
-                <option>State Bank of India</option>
-                <option>HDFC Bank</option>
-                <option>ICICI Bank</option>
-                <option>Axis Bank</option>
-                <option>Bank of Baroda</option>
+              <label htmlFor="bank">Select Bank</label>
+              <select
+                id="bank"
+                value={bank}
+                onChange={(event) => setBank(event.target.value)}
+              >
+                <option value="">Select your bank</option>
+                <option value="SBI">State Bank of India</option>
+                <option value="HDFC">HDFC Bank</option>
+                <option value="ICICI">ICICI Bank</option>
+                <option value="Axis">Axis Bank</option>
+                <option value="BOB">Bank of Baroda</option>
               </select>
-
             </div>
           )}
-
         </div>
-
-
-        {/* Security */}
 
         <div className="payment-security">
-
-          <span>🔒</span>
-
+          <span>ℹ️</span>
           <div>
-            <strong>Your payment is secure</strong>
-
+            <strong>Demo payment mode</strong>
             <p>
-              BMB protects your payment information
-              using secure payment processing.
+              This button simulates a successful payment for testing.
+              It does not contact a payment gateway or charge money.
             </p>
           </div>
-
         </div>
-
-
-        {/* Pay Button */}
 
         <button
           className="pay-now-btn"
@@ -302,12 +295,10 @@ function Payment() {
           disabled={processing}
         >
           {processing
-            ? "Processing Payment..."
-            : `Pay ₹${amount || "0"}`}
+            ? "Processing..."
+            : `Continue — ₹${amount || "0"}`}
         </button>
-
       </div>
-
     </div>
   );
 }

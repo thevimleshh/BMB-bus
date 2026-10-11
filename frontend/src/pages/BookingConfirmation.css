@@ -597,3 +597,34 @@
     border: 1px solid #ccc;
   }
 }
+
+.pickup-drop-selection {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.pickup-drop-selection label {
+  font-weight: 600;
+}
+
+.pickup-drop-selection select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 15px;
+  outline: none;
+}
+
+.pickup-drop-selection select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.pickup-drop-selection small {
+  color: #dc2626;
+  font-size: 13px;
+}

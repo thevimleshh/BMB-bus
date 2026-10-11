@@ -461,12 +461,12 @@ function SeatSelection() {
               }
 
               navigate(
-                `/passenger-details?busId=${bus.id}&seats=${selectedSeats.join(
-                  ","
-                )}&date=${encodeURIComponent(
-                  journeyDate
-                )}`
-              );
+  `/passenger-details?busId=${bus.id}&seats=${selectedSeats.join(
+    ","
+  )}&date=${encodeURIComponent(
+    journeyDate
+  )}`
+);
 
             }}
           >

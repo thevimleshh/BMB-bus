@@ -1,3 +1,4 @@
+
 package com.bmb.backend.entity;
 
 import jakarta.persistence.Entity;
@@ -40,13 +41,16 @@ public class Booking {
 
     private String bookingStatus;
 
+    // Selected pickup and drop point IDs
+    private Long pickupStopId;
 
-    // DEFAULT CONSTRUCTOR
+    private Long dropStopId;
+
+    // Default constructor
     public Booking() {
     }
 
-
-    // GETTERS AND SETTERS
+    // Getters and setters
 
     public Long getId() {
         return id;
@@ -56,7 +60,6 @@ public class Booking {
         this.id = id;
     }
 
-
     public String getUserEmail() {
         return userEmail;
     }
@@ -64,7 +67,6 @@ public class Booking {
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
-
 
     public Long getBusId() {
         return busId;
@@ -74,7 +76,6 @@ public class Booking {
         this.busId = busId;
     }
 
-
     public String getJourneyDate() {
         return journeyDate;
     }
@@ -82,7 +83,6 @@ public class Booking {
     public void setJourneyDate(String journeyDate) {
         this.journeyDate = journeyDate;
     }
-
 
     public String getPassengerName() {
         return passengerName;
@@ -92,7 +92,6 @@ public class Booking {
         this.passengerName = passengerName;
     }
 
-
     public int getPassengerAge() {
         return passengerAge;
     }
@@ -100,7 +99,6 @@ public class Booking {
     public void setPassengerAge(int passengerAge) {
         this.passengerAge = passengerAge;
     }
-
 
     public String getPassengerGender() {
         return passengerGender;
@@ -110,7 +108,6 @@ public class Booking {
         this.passengerGender = passengerGender;
     }
 
-
     public String getPassengerPhone() {
         return passengerPhone;
     }
@@ -118,7 +115,6 @@ public class Booking {
     public void setPassengerPhone(String passengerPhone) {
         this.passengerPhone = passengerPhone;
     }
-
 
     public String getPassengerEmail() {
         return passengerEmail;
@@ -128,7 +124,6 @@ public class Booking {
         this.passengerEmail = passengerEmail;
     }
 
-
     public String getSeats() {
         return seats;
     }
@@ -136,7 +131,6 @@ public class Booking {
     public void setSeats(String seats) {
         this.seats = seats;
     }
-
 
     public double getTotalAmount() {
         return totalAmount;
@@ -146,7 +140,6 @@ public class Booking {
         this.totalAmount = totalAmount;
     }
 
-
     public String getPaymentStatus() {
         return paymentStatus;
     }
@@ -154,7 +147,6 @@ public class Booking {
     public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
     }
-
 
     public String getPaymentId() {
         return paymentId;
@@ -164,7 +156,6 @@ public class Booking {
         this.paymentId = paymentId;
     }
 
-
     public String getPaymentMethod() {
         return paymentMethod;
     }
@@ -173,12 +164,27 @@ public class Booking {
         this.paymentMethod = paymentMethod;
     }
 
-
     public String getBookingStatus() {
         return bookingStatus;
     }
 
     public void setBookingStatus(String bookingStatus) {
         this.bookingStatus = bookingStatus;
+    }
+
+    public Long getPickupStopId() {
+        return pickupStopId;
+    }
+
+    public void setPickupStopId(Long pickupStopId) {
+        this.pickupStopId = pickupStopId;
+    }
+
+    public Long getDropStopId() {
+        return dropStopId;
+    }
+
+    public void setDropStopId(Long dropStopId) {
+        this.dropStopId = dropStopId;
     }
 }
