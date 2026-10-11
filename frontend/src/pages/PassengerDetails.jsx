@@ -61,24 +61,22 @@ function PassengerDetails() {
 
     if (loading) return;
 
-    console.log("Passenger form submitted");
-    console.log("Bus ID:", busId);
-    console.log("Selected seats:", selectedSeats);
-    console.log("Journey date:", journeyDate);
-    console.log("API URL:", `${API_URL}/api/buses`);
-
-    // Validate URL parameters
+    // Validate bus and seat details
     if (!busId || selectedSeats.length === 0) {
-      alert("Bus ID or selected seats are missing. Please select your bus and seats again.");
+      alert(
+        "Bus ID or selected seats are missing. Please select your bus and seats again."
+      );
       return;
     }
 
-    // Validate pickup/drop details
+    // Validate pickup and drop details
     if (
       pickupDrop.pickupStopId == null ||
       pickupDrop.dropStopId == null
     ) {
-      alert("Pickup and drop details are missing. Please select them again.");
+      alert(
+        "Pickup and drop details are missing. Please select them again."
+      );
 
       navigate(
         `/pickup-drop?busId=${encodeURIComponent(
@@ -96,8 +94,11 @@ function PassengerDetails() {
     setLoading(true);
 
     try {
-      // Fetch buses from local Spring Boot backend
-      const response = await fetch(`${API_URL}/api/buses`);
+      const requestUrl = `${API_URL}/api/buses`;
+
+      console.log("Request URL:", requestUrl);
+
+      const response = await fetch(requestUrl);
 
       console.log("Response status:", response.status);
 
@@ -112,7 +113,7 @@ function PassengerDetails() {
       console.log("Bus API response:", buses);
 
       if (!Array.isArray(buses)) {
-        throw new Error("Bus API did not return a list of buses");
+        throw new Error("Bus API did not return a list of buses.");
       }
 
       const selectedBus = buses.find(
@@ -127,14 +128,15 @@ function PassengerDetails() {
       const price = Number(selectedBus.price);
 
       if (!Number.isFinite(price) || price < 0) {
-        throw new Error("Invalid bus ticket price");
+        throw new Error("Invalid bus ticket price.");
       }
 
       const totalAmount = selectedSeats.length * price;
 
+      console.log("Selected bus:", selectedBus);
       console.log("Total amount:", totalAmount);
 
-      // Preserve all details for Payment and Booking Confirmation
+      // Continue to payment and preserve booking details
       navigate(
         `/payment?busId=${encodeURIComponent(
           busId
@@ -167,7 +169,7 @@ function PassengerDetails() {
       console.error("PassengerDetails error:", error);
 
       alert(
-        `Unable to load bus details: ${error.message}. Check the browser console for details.`
+        `Unable to load bus details: ${error.message}. Please check your internet connection and try again.`
       );
     } finally {
       setLoading(false);
@@ -186,7 +188,7 @@ function PassengerDetails() {
         </p>
       </div>
 
-      {/* JOURNEY SUMMARY */}
+      {/* Journey Summary */}
       <div className="passenger-journey-summary">
         <div>
           <span>JOURNEY DATE</span>
@@ -199,7 +201,7 @@ function PassengerDetails() {
         </div>
       </div>
 
-      {/* PASSENGER FORM */}
+      {/* Passenger Form */}
       <div className="passenger-container">
         <form
           className="passenger-form"
@@ -214,7 +216,9 @@ function PassengerDetails() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="passenger-name">FULL NAME</label>
+            <label htmlFor="passenger-name">
+              FULL NAME
+            </label>
 
             <input
               id="passenger-name"
@@ -245,7 +249,9 @@ function PassengerDetails() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="passenger-gender">GENDER</label>
+              <label htmlFor="passenger-gender">
+                GENDER
+              </label>
 
               <select
                 id="passenger-gender"
@@ -263,7 +269,9 @@ function PassengerDetails() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="passenger-phone">PHONE NUMBER</label>
+            <label htmlFor="passenger-phone">
+              PHONE NUMBER
+            </label>
 
             <input
               id="passenger-phone"
@@ -277,7 +285,9 @@ function PassengerDetails() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="passenger-email">EMAIL ADDRESS</label>
+            <label htmlFor="passenger-email">
+              EMAIL ADDRESS
+            </label>
 
             <input
               id="passenger-email"
